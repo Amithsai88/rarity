@@ -17,3 +17,27 @@ header a {
   font-weight: bold;
   text-decoration: none;
 }
+
+main {
+  padding: 1rem;
+}
+
+.arts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.art {
+  border: 1px #404040 solid;
+  margin: 1rem;
+}
+
+.art img {
+  width: 100%;
+  max-width: 400px;
+}
+
+.art-details {
+  padding: 1rem;
+}
