@@ -1,14 +1,39 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import { Link } from 'react-router-dom';
 // import data from '../data';
+import logger from 'use-reducer-logger';
 import axios from 'axios';
 
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'FETCH_REQUEST':
+      return { ...state, loading: true };
+    case 'FETCH_SUCCESS':
+      return { ...state, artists: action.payload, loading: false };
+    case 'FETCH_FAILED':
+      return { ...state, loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
 function HomeDisplay() {
-  const [artists, setArtists] = useState([]);
+  // const [artists, setArtists] = useState([]);
+  const [{ loading, error, artists }, dispatch] = useReducer(logger(reducer), {
+    artists: [],
+    loading: true,
+    error: '',
+  });
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get('/api/artists');
-      setArtists(result.data);
+      dispatch({ type: 'FETCH_REQUEST' });
+      try {
+        const result = await axios.get('/api/artists');
+        dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
+      } catch (err) {
+        dispatch({ type: 'FETCH_FAILED', payload: err.message });
+      }
+      // setArtists(result.data);
     };
     fetchData();
   }, []);
@@ -16,18 +41,24 @@ function HomeDisplay() {
     <div>
       <h1>Artists</h1>
       <div className="arts">
-        {artists.map((artist) => (
-          <div className="art" key={artist.artist_id}>
-            <Link to={`/art/${artist.artist_id}`}>
-              <img src={artist.artist_img} alt={artist.artist}></img>
-            </Link>
-            <div className="art-details">
+        {loading ? (
+          <div>loading... </div>
+        ) : error ? (
+          <div>{error}</div>
+        ) : (
+          artists.map((artist) => (
+            <div className="art" key={artist.artist_id}>
               <Link to={`/art/${artist.artist_id}`}>
-                <p>{artist.artist}</p>
+                <img src={artist.artist_img} alt={artist.artist}></img>
               </Link>
+              <div className="art-details">
+                <Link to={`/art/${artist.artist_id}`}>
+                  <p>{artist.artist}</p>
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );
