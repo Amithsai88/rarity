@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 // import data from '../data';
 import logger from 'use-reducer-logger';
 import axios from 'axios';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -42,9 +44,9 @@ function HomeDisplay() {
       <h1>Artists</h1>
       <div className="arts">
         {loading ? (
-          <div>loading... </div>
+          <LoadingBox />
         ) : error ? (
-          <div>{error}</div>
+          <MessageBox variant="danger">{error}</MessageBox>
         ) : (
           artists.map((artist) => (
             <div className="art" key={artist.artist_id}>

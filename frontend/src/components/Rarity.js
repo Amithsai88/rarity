@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function typeExists(trait, arr) {
   return arr.some(function (el) {

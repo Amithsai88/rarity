@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import Rarity from '../components/Rarity';
+// import Rarity from '../components/Rarity';
 
 function Art(props) {
   const { art, arts } = props;
