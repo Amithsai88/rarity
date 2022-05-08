@@ -4,6 +4,7 @@ import Arts from './displays/Arts';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import { LinkContainer } from 'react-router-bootstrap';
+import Signin from './displays/Signin';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Container>
             <Routes>
               <Route path="/art/:artist_id" element={<Arts />} />
+              {/* <Route path="/signin" element={<Signin />} /> */}
               <Route path="/" element={<HomeDisplay />} />
             </Routes>
           </Container>

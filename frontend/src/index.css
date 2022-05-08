@@ -30,3 +30,7 @@ main {
 .art-details {
   padding: 1rem;
 }
+
+.small-container {
+  max-width: 600px;
+}
