@@ -5,6 +5,7 @@ import logger from 'use-reducer-logger';
 import axios from 'axios';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import { Helmet } from 'react-helmet-async';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -41,6 +42,9 @@ function HomeDisplay() {
   }, []);
   return (
     <div>
+      <Helmet>
+        <title>Rarebuy</title>
+      </Helmet>
       <h1>Artists</h1>
       <div className="arts">
         {loading ? (
