@@ -8,13 +8,16 @@ export default function Signin() {
   const { search } = useLocation();
   const redirectInUrl = new URLSearchParams(search).get('redirect');
   const redirect = redirectInUrl ? redirectInUrl : '/';
+
+  const submitHandler = async (e) => {};
+
   return (
     <Container className="small-container">
       <Helmet>
         <title>Sign In</title>
       </Helmet>
       <h1 className="my-3">Sign in</h1>
-      <Form>
+      <Form onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId="email">
           <Form.Label>Email</Form.Label>
           <Form.Control type="email" required />
