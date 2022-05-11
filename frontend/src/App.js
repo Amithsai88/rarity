@@ -14,8 +14,15 @@ function App() {
           <Navbar bg="dark" variant="dark">
             <Container>
               <LinkContainer to="/">
-                <Navbar.Brand>RareBuy</Navbar.Brand>
+                <Navbar.Brand>RareCheck</Navbar.Brand>
               </LinkContainer>
+            </Container>
+            <Container>
+              <Navbar.Collapse className="justify-content-end">
+                <LinkContainer to="/signin">
+                  <Navbar.Brand>Sign in</Navbar.Brand>
+                </LinkContainer>
+              </Navbar.Collapse>
             </Container>
           </Navbar>
         </header>
@@ -23,7 +30,7 @@ function App() {
           <Container>
             <Routes>
               <Route path="/art/:artist_id" element={<Arts />} />
-              {/* <Route path="/signin" element={<Signin />} /> */}
+              <Route path="/signin" element={<Signin />} />
               <Route path="/" element={<HomeDisplay />} />
             </Routes>
           </Container>

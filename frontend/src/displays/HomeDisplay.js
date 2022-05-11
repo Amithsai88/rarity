@@ -43,7 +43,7 @@ function HomeDisplay() {
   return (
     <div>
       <Helmet>
-        <title>Rarebuy</title>
+        <title>Rarecheck</title>
       </Helmet>
       <h1>Artists</h1>
       <div className="arts">
