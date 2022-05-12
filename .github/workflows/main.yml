@@ -20,13 +20,13 @@ jobs:
       - name: Generate build
         run: CI=false npm run build
       - name: Build the Docker image
-        run: docker build -f Dockerfile -t shathir984/Rarity .
+        run: docker build -f Dockerfile -t shathir984/rarity .
       - name: Publish to Docker Hub
         uses: docker/build-push-action@v1
         with:
          username: ${{ secrets.DOCKER_USER}}
          password: ${{ secrets.DOCKER_PASS}}
-         repository: shathir984/Rarity
+         repository: shathir984/rarity
          tags: latest
 #       - name: Upload production-ready build files
 #         uses: actions/upload-artifact@v2
