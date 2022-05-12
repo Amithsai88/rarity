@@ -8,6 +8,8 @@ import Axios from 'axios';
 import { toast } from 'react-toastify';
 import { Store } from '../Store.js';
 import { getError } from '../utils';
+// import { SentryError } from '@sentry/utils';
+import * as Sentry from "@sentry/react";
 
 export default function Signin() {
   const navigate = useNavigate();
@@ -32,6 +34,7 @@ export default function Signin() {
       localStorage.setItem('userInfo', JSON.stringify(data));
       navigate(redirect || '/');
     } catch (err) {
+      Sentry.captureException(err);
       toast.error(getError(err));
     }
   };
