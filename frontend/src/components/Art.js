@@ -1,6 +1,5 @@
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import { useLocation } from 'react-router-dom';
+
 // import Rarity from '../components/Rarity';
 
 function Art(props) {
