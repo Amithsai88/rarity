@@ -5,7 +5,4 @@ RUN npm install
 COPY . .
 RUN npm run build
 EXPOSE 3000
-CMD ["cd", "frontend"]
-CMD ["npm", "start"]
-CMD ["cd", "backend"]
 CMD ["npm", "start"]
