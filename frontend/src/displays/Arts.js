@@ -2,14 +2,15 @@ import Art from '../components/Art';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import data from '../data.js';
 
 function Arts() {
   const [artists, setArtists] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get('/api/artists');
-      setArtists(result.data);
+//       const result = await axios.get('/api/artists');
+      setArtists(data.artists);
     };
     fetchData();
   }, []);
