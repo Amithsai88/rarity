@@ -18,7 +18,7 @@ jobs:
         env:
           CI: false
       - name: Generate build
-        run: CI=false npm run
+        run: CI=false npm run build
       - name: Build the Docker image
         run: docker build -f Dockerfile -t shathir984/rarity .
       - name: Publish to Docker Hub
