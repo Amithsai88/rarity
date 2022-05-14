@@ -14,7 +14,7 @@
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/Amithsai88/rarity#readme",
+  "homepage": "https://github.com/Amithsai88/rarity",
   "dependencies": {
     "@sentry/react": "^6.19.7",
     "@sentry/tracing": "^6.19.7",
