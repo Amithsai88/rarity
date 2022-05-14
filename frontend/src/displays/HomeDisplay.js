@@ -1,8 +1,8 @@
 import { useEffect, useReducer } from 'react';
 import { Link } from 'react-router-dom';
-// import data from '../data';
+import data from '../data';
 import logger from 'use-reducer-logger';
-import axios from 'axios';
+// import axios from 'axios';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { Helmet } from 'react-helmet-async';
@@ -31,8 +31,8 @@ function HomeDisplay() {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
-        const result = await axios.get('/api/artists');
-        dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
+//         const result = await axios.get('/api/artists');
+        dispatch({ type: 'FETCH_SUCCESS', payload: data.artists });
       } catch (err) {
         dispatch({ type: 'FETCH_FAILED', payload: err.message });
       }
