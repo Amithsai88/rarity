@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: production-files
-          path: ./build
+          path: ./frontend/build
   deploy:
     name: Deploy
     needs: build
@@ -44,10 +44,10 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: production-files
-        path: ./build
+        path: ./frontend/build
 
     - name: Deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{secrets.token}}
-        publish_dir: ./build
+        publish_dir: ./frontend/build
