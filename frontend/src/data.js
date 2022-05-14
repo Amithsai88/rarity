@@ -8,7 +8,9 @@ const data = {
         {
           id: 0,
           name: "One Day I'll Be A Punk #0",
-          price: '20$',
+          count: 1,
+          rarity: 0,
+          price: '2',
           description:
             '[OneDayPunk #0](https://punkscape.xyz/onedaypunks/0), the shadow of [CryptoPunk #0](https://punkscape.xyz/cryptopunks/0) is one of 10k ***"One Day I\'ll Be A Punk"***-punks. \n\nShe sure would love to inhabit a [PunkScape](https://punkscape.xyz).',
           image: '../../images/artist_1/0.png',
@@ -38,7 +40,9 @@ const data = {
         {
           id: 1,
           name: "One Day I'll Be A Punk #1",
-          price: '20$',
+          price: '3',
+          rarity: 2,
+          count: 1,
           description:
             '[OneDayPunk #1](https://punkscape.xyz/onedaypunks/1), the shadow of [CryptoPunk #1](https://punkscape.xyz/cryptopunks/1) is one of 10k ***"One Day I\'ll Be A Punk"***-punks. \n\nHe sure would love to inhabit a [PunkScape](https://punkscape.xyz).',
           image: '../../images/artist_1/1.png',
@@ -64,7 +68,9 @@ const data = {
         {
           id: 2,
           name: "One Day I'll Be A Punk #2",
-          price: '20$',
+          price: '5',
+          rarity: 1,
+          count: 1,
           description:
             '[OneDayPunk #2](https://punkscape.xyz/onedaypunks/2), the shadow of [CryptoPunk #2](https://punkscape.xyz/cryptopunks/2) is one of 10k ***"One Day I\'ll Be A Punk"***-punks. \n\nShe sure would love to inhabit a [PunkScape](https://punkscape.xyz).',
           image: '../../images/artist_1/2.png',
@@ -86,7 +92,9 @@ const data = {
         {
           id: 3,
           name: "One Day I'll Be A Punk #3",
-          price: '20$',
+          rarity: 4,
+          price: '1',
+          count: 1,
           description:
             '[OneDayPunk #3](https://punkscape.xyz/onedaypunks/3), the shadow of [CryptoPunk #3](https://punkscape.xyz/cryptopunks/3) is one of 10k ***"One Day I\'ll Be A Punk"***-punks. \n\nHe sure would love to inhabit a [PunkScape](https://punkscape.xyz).',
           image: '../../images/artist_1/3.png',
@@ -116,7 +124,9 @@ const data = {
         {
           id: 4,
           name: "One Day I'll Be A Punk #4",
-          price: '20$',
+          price: '4',
+          rarity: 5,
+          count: 1,
           description:
             '[OneDayPunk #4](https://punkscape.xyz/onedaypunks/4), the shadow of [CryptoPunk #4](https://punkscape.xyz/cryptopunks/4) is one of 10k ***"One Day I\'ll Be A Punk"***-punks. \n\nHe sure would love to inhabit a [PunkScape](https://punkscape.xyz).',
           image: '../../images/artist_1/4.png',
